@@ -14,9 +14,9 @@ function App() {
         </GridItem>
         {/* con SHOW -> indico que solo rendreize en pantallas por encima de lg */}
         <Show above='lg'> 
-          <GridItem area={'aside'} bg="gold">Aside</GridItem>
+          <GridItem area={'aside'}>Aside</GridItem>
         </Show>
-        <GridItem area={'main'} bg="dodgerblue">Main</GridItem>
+        <GridItem area={'main'}>Main</GridItem>
       </Grid>
     </>
   )
