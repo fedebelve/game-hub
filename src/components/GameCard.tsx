@@ -1,5 +1,6 @@
-import { Card, CardBody, Heading, Image, Text } from '@chakra-ui/react'
+import { Card, CardBody, Heading, HStack, Image, Text } from '@chakra-ui/react'
 import { Game } from '../hooks/useGames'
+import CrtiticScore from './CrtiticScore'
 import PlatformIconList from './PlatformIconList'
 
 
@@ -17,7 +18,10 @@ function GameCard({ game }: Props) {
             </Heading>
             {/* puedo hacerlo asi -> pero mejor desestructurar al objeto platform   {game.parent_platforms.map((platform) => <Text>{platform.platform.name}</Text>)} */}
             {/* {game.parent_platforms.map(({platform}) => <Text>{platform.name}</Text>)} */}
-            <PlatformIconList platforms={game.parent_platforms.map(p => p.platform)} />
+            <HStack justifyContent={'space-between'}>
+                <PlatformIconList platforms={game.parent_platforms.map(p => p.platform)} />
+                <CrtiticScore score={game.metacritic} />
+            </HStack>
         </CardBody>
     </Card>
   )
