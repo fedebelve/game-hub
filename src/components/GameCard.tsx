@@ -14,15 +14,15 @@ function GameCard({ game }: Props) {
     <Card borderRadius={10} overflow={'hidden'}>
         <Image src={getCroppedImageUrl(game.background_image)}></Image>
         <CardBody>
-            <Heading fontSize={'2xl'}>
-                {game.name}
-            </Heading>
             {/* puedo hacerlo asi -> pero mejor desestructurar al objeto platform   {game.parent_platforms.map((platform) => <Text>{platform.platform.name}</Text>)} */}
             {/* {game.parent_platforms.map(({platform}) => <Text>{platform.name}</Text>)} */}
-            <HStack justifyContent={'space-between'}>
+            <HStack marginBottom={3} justifyContent={'space-between'}>
                 <PlatformIconList platforms={game.parent_platforms.map(p => p.platform)} />
                 <CrtiticScore score={game.metacritic} />
             </HStack>
+            <Heading fontSize={'2xl'}>
+                {game.name}
+            </Heading>
         </CardBody>
     </Card>
   )
