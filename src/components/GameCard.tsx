@@ -11,6 +11,7 @@ interface Props{
 }
 
 function GameCard({ game }: Props) {
+    const platforms = game.parent_platforms? game.parent_platforms.map(p => p.platform): []
   return (
     <Card borderRadius={10} overflow={'hidden'}>
         <Image src={getCroppedImageUrl(game.background_image)}></Image>
@@ -18,7 +19,7 @@ function GameCard({ game }: Props) {
             {/* puedo hacerlo asi -> pero mejor desestructurar al objeto platform   {game.parent_platforms.map((platform) => <Text>{platform.platform.name}</Text>)} */}
             {/* {game.parent_platforms.map(({platform}) => <Text>{platform.name}</Text>)} */}
             <HStack marginBottom={3} justifyContent={'space-between'}>
-                <PlatformIconList platforms={game.parent_platforms.map(p => p.platform)} />
+                <PlatformIconList platforms={platforms} />
                 <CrtiticScore score={game.metacritic} />
             </HStack>
             <Heading fontSize={'2xl'}>
