@@ -10,7 +10,7 @@ import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { GameQuery } from "../App";
 import useGames from "../hooks/useGames";
-import { Genre } from "../hooks/useGenre";
+import { Genre } from "../hooks/useGenres";
 import { Platform } from "../hooks/usePlatforms";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
