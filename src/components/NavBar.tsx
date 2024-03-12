@@ -1,4 +1,5 @@
 import { HStack, Image, Text } from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.webp'
 import useGameQueryStore from '../store';
 import ColorModeSwitch from './ColorModeSwitch'
@@ -12,7 +13,9 @@ const NavBar = ()=> {
   const { setSearchText } = useGameQueryStore()
   return (
     <HStack padding={'10px'}>
-        <Image src={logo} boxSize='60px'/>
+      <Link to='/'>
+        <Image src={logo} boxSize='60px' objectFit={'cover'}/>
+      </Link>
         <SearchInput 
         //onSearch={(text) => onSearch(text)}
         />
